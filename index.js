@@ -54,3 +54,26 @@ class Stack {
     }
 }
 
+/* Написать функцию, которая проверяет входную строку на парность скобок и возвращает true/false в зависимости от результата */
+
+
+
+function checkString(string) {
+
+    const stack = new Stack(10);
+  
+    for (const symbol of string) {
+        
+        if (symbol === '(' || '[' || '<') {
+            stack.push(symbol);
+        } else if (symbol === ')' || ']' || '>') {
+
+            if (!stack.pop()) {
+                return false;
+            }
+        }
+    }
+
+    return console.log(true);
+}
+  
